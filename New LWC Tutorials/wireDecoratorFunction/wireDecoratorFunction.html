@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Wire Decoratoe with Function">
+        <template lwc:if={accounts}>
+        <div class="slds-var-p-around_small">
+            <p style="color: Red;">Tips- Usually use when perform operations on data/output but always use in interview.</p>
+            <lightning-datatable key-field="Id" data={accounts} columns={columns} onsave={saveHandler} draft-values={draftValues}></lightning-datatable>
+        </div>
+        </template>
+        <template lwc:elseif={error}>
+            console.log('Error while fetching the account records in WireDecoratorFunction');
+            <p>Error while fetching the account records in WireDecoratorFunction</p>
+        </template>
+    </lightning-card>
+</template>

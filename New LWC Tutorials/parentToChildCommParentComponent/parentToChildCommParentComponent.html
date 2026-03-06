@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Parent to Child Communication">
+
+        <div class="slds-var-p-around_small">
+            <lightning-button label="Show chit code" variant="brand" onclick={clickHandler}>
+
+            </lightning-button>
+        </div>
+        <div class = "slds-var-p-around_small">
+            <c-parent-to-child-comm-child-component data={Message} getdata={MessageforButton} chitcode={GetChitCode}></c-parent-to-child-comm-child-component>
+        </div>     
+    </lightning-card>
+</template>

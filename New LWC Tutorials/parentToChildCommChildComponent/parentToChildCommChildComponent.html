@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Child Component">
+        <p class="slds-var-p-around_small">Message from Parent: {data}</p>
+
+        <div class="slds-var-p-around_small">
+            <lightning-button label= "Display Message" variant="brand" onclick={clickHandler}></lightning-button>
+        </div>
+
+        <template lwc:if={displaymsg}>
+            <p class="slds-var-p-around_small">{getdata}</p>
+        </template>
+
+         <p class="slds-var-p-around_small"><b>{chitcode}</b></p>
+    </lightning-card>
+</template> 

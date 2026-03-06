@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Subscriber for Contact Details Component LMS">
+        <div class="slds-m-horizontal_xx-large">
+        <template lwc:if={selectedContact}>
+                    <img src = {selectedContact.PhotoUrl} />
+                    <p>{selectedContact.Name}</p>
+                    <p>{selectedContact.Title}</p>
+                    <p><lightning-formatted-phone value={selectedContact.Phone}></lightning-formatted-phone></p>
+                    <p><lightning-formatted-email value={selectedContact.Email}></lightning-formatted-email></p>
+                </template>
+                </div>
+    </lightning-card>
+</template>

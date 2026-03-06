@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Different ways to perform CRUD operation in LWC">
+        <div class="slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none slds-box slds-p-around_none">
+            <lightning-layout>
+                <lightning-layout-item size="3">
+                    <div class="custom-box slds-box slds-p-around_medium slds-text-align_center"><p>Standard Lightning Form- <br><br><b>1) Lightning Record Form <br><br>2) Lightning Record View Form <br><br>3) Lightning Record Edit Form</b></p></div>
+                </lightning-layout-item>
+                <lightning-layout-item size="3">
+                    <div class="custom-box slds-box slds-p-around_medium slds-text-align_center"><p>With the help of <b>@wire deccorator- <br><br>1) createRecord <br><br>2) updateRecord <br><br>3) deleteRecord</b><br><br></p>
+                    <p style="color: Red;">Always return the data in promise i.e. .then(()=>&#123;&#125;) .catch(()=>&#123;&#125;);</p>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="3">
+                    <div class="custom-box slds-box slds-p-around_medium slds-text-align_center"><p>With <b>Imperative Apex by calling Apex Class for fetching (cachable=true is optional) or for DML CRUD operation (cachable=true) not required</b><br><br></p>
+                    <p style="color: Red;">Always return the data in promise</p>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="3">
+                    <div class="custom-box slds-box slds-p-around_medium slds-text-align_center"><p>With <b>Navigation</b> we can <b>create and update</b> the record with standard SF page</p></div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

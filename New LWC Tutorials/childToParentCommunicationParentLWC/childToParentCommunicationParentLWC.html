@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Child To Parent Communication">
+        
+        <p class="slds-var-p-around_small">Message from Child is: {childmsg}</p>
+        
+    <template lwc:if={displayMessage}>
+        <p class="slds-var-p-around_small">Welcome to Learn LWC from Bootcamp</p>
+    </template>
+
+        <p class="slds-var-p-around_small">Chit code: <b>{chit}</b></p>
+
+        <div class="slds-var-p-around_small">
+            <c-child-to-parent-communication-child-l-w-c ondisplaymsg={showMessage} onmeesageforparent={showMessage1} onchitforctpcomm={showMessage2}></c-child-to-parent-communication-child-l-w-c>
+        </div>
+    </lightning-card>
+</template>

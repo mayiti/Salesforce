@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="getRecord/getRecords from uiRecordApi Adpator">
+        <div class="slds-box slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="6" padding="around-small">
+                    <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">
+
+                        <p style="color: Red;"><b>Dynamic data from getRecord</b></p>
+                        <p style="color: Blue;">Account Name from manual travelsing: <b>{accname}</b></p>
+                        <p style="color: Green;">Account AnnualRevenue from getFieldDisplayValue:
+                            <b>{accRevenue}</b>
+                        </p>
+                        <p style="color: Orange;">Account Industry from getFieldValue: <b>{accIndustry}</b></p>
+
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" padding="around-small">
+                    <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">
+                        <p style="color: Red;"><b>Specific data/ hardcode Ids from getRecords</b></p>
+                        <template lwc:if={output}>
+                            <template for:each={output.results} for:item="output">
+                                <p style="color: Gray;" key={output.result.Id}><b>{output.result.fields.Name.value}</b>
+                                </p>
+                            </template>
+                        </template>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

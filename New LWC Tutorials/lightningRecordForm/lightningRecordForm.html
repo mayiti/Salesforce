@@ -1,0 +1,58 @@
+<template>
+    <lightning-card title="Lightning Record Form All types">
+    <lightning-card title="Lightning Record Form - view the record">
+        <lightning-record-form
+            object-api-name={objectApiName}
+            record-id={recordId}
+            layout-type="Compact" 
+            onsuccess={ShowToast}
+            columns="3">
+        </lightning-record-form>
+    </lightning-card>
+    <hr>
+<!-- If you want to show all the fields use layout-type as Full for compact it will show only compact fields means highlight pannel fields-->
+    <lightning-card title="Lightning Record Form - view the record with specific fields">
+        <lightning-record-form
+            object-api-name={objectApiName}
+            record-id={recordId}
+            fields={fieldList}
+            onsuccess={ShowToast}
+            mode="view"
+            columns="2">
+        </lightning-record-form>
+    </lightning-card>
+<hr>
+    <lightning-card title="Lightning Record Form - Read only record with specific fields">
+        <lightning-record-form
+            object-api-name={objectApiName}
+            record-id={recordId}
+            fields={fieldList}
+            columns="2"
+            mode="readonly">
+        </lightning-record-form>
+    </lightning-card>
+<hr>
+<lightning-card title="Lightning Record Form - Edit record with specific fields">
+        <lightning-record-form
+            object-api-name={objectApiName}
+            record-id={recordId}
+            fields={fieldList}
+            onsuccess={ShowToast}
+            columns="2"
+            mode="edit">
+        </lightning-record-form>
+    </lightning-card>
+    <hr>
+    <lightning-card title="Lightning Record Form - Create the record with specific fields">
+        <lightning-record-form
+            object-api-name={objectApiName}
+            fields={fieldList}
+            columns="2"
+            onsuccess={NavigateHandler}
+            >
+        </lightning-record-form>
+    </lightning-card>
+</lightning-card>
+</template>
+
+ 

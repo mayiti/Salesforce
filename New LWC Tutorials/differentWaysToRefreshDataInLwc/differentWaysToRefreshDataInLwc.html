@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Different ways to refresh Data/UI in LWC">
+        <div class="slds-box slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+            <lightning-layout>
+                <lightning-layout-item size="6" padding="around-small">
+                    <div class="custom-box slds-box slds-p-around_medium slds-text-align_center"><p>1) Through import <b>refreshApex</b>-> This is used to refresh the data fetched via <b>@wire(ApexMethod)</b></p></div>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" padding="around-small">
+                    <div class="custom-box slds-box slds-p-around_medium slds-text-align_center"><p>2) Through import <b>notifyRecordUpdateAvailable</b>-> This is used to refresh the satndard Salesforce UI component or LDS cache after updating record via <b>Imperative Apex</b></p>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

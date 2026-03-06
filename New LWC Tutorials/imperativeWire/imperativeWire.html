@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Use of Imperative Apex to Fetch Data">
+        <div class="slds-var-p-around_small">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_2-of-3">
+                    <template lwc:if={industryPicklist.data}>
+                    <lightning-combobox label="Industry" placeholder="Select Industry"
+                        options={industryPicklist.data.values} onchange={handleChange}>
+                    </lightning-combobox>
+                    </template>
+                </div>
+                <div class="slds-col slds-size_1-of-3">
+                    <lightning-button label="Load Account Records" variant="brand" onclick={clickHandler}>
+                    </lightning-button>
+                </div>
+            </div>
+        </div>
+    
+        <template lwc:if={data}>
+            <div class="slds-var-p-around_small">
+                
+                    <lightning-datatable key-field="id" data={data} columns={columns}>
+                    </lightning-datatable>
+                
+            </div>
+        </template>
+    </lightning-card>
+</template>

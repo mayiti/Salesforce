@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Contact List" icon-name="custom:custom14">
+        <lightning-layout class="slds-var-p-around_small">
+            <lightning-layout-item>
+                <template lwc:if={contacts.data}>
+                    <template for:each={contacts.data} for:item="contact">
+                        <c-contact-details contact={contact} key ={contact.Id} onselection ={selectionHandler}></c-contact-details>
+                    </template>
+                </template>
+            </lightning-layout-item>
+
+            <lightning-layout-item class="slds-var-p-left_xx-large">
+                 <div class="slds-p-left_xx-large">
+                <template lwc:if={selectedContact}>
+                    <img src = {selectedContact.PhotoUrl} />
+                    <p>{selectedContact.Name}</p>
+                    <p>{selectedContact.Title}</p>
+                    <p><lightning-formatted-phone value={selectedContact.Phone}></lightning-formatted-phone></p>
+                    <p><lightning-formatted-email value={selectedContact.Email}></lightning-formatted-email></p>
+                </template>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

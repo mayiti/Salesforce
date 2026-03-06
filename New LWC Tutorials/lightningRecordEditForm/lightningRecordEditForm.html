@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="Lightning Record Edit Form">
+   <lightning-card title="Lightning Record Edit Form- Create Mode">
+        <lightning-record-edit-form object-api-name={objectApiName} onsuccess={SuccessHandler} onsubmit={SubmitHandler}>
+            <div class="slds-var-p-around_small">
+                <lightning-input-field field-name={fields.Name}></lightning-input-field>
+                <lightning-input-field field-name={fields.Rating}></lightning-input-field>
+                <lightning-input-field field-name={fields.SLA}></lightning-input-field>
+                <lightning-input-field field-name={fields.Website}></lightning-input-field>
+            </div>
+            <div class="slds-var-p-around_small">
+                <lightning-button type="submit" variant="brand" label="Create Record"></lightning-button>
+
+                <lightning-button variant="brand" label="Reset Button" class="slds-var-p-around_small" onclick={ResetHandler}></lightning-button>
+            </div>
+        </lightning-record-edit-form>
+   </lightning-card>
+   <hr>
+   <lightning-card title="Lightning Record Edit Form- Edit Mode">
+        <lightning-record-edit-form object-api-name={objectApiName} onsuccess={SuccessHandler} onsubmit={SubmitHandler1} record-id={recordId}>
+            <div class="slds-var-p-around_small">
+                <lightning-input-field field-name={fields.Name}></lightning-input-field>
+                <lightning-input-field field-name={fields.Rating}></lightning-input-field>
+                <lightning-input-field field-name={fields.SLA}></lightning-input-field>
+            </div>
+            <div class="slds-var-p-around_small">
+                <lightning-button type="submit" variant="brand" label="Save Record"></lightning-button>
+
+                <lightning-button variant="brand" label="Reset Button" class="slds-var-p-around_small" onclick={ResetHandler}></lightning-button>
+            </div>
+        </lightning-record-edit-form>
+   </lightning-card> 
+   </lightning-card>
+</template>

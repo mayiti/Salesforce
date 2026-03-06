@@ -1,0 +1,74 @@
+<template>
+    <lightning-card title="getObjectInfo/getObjectInfos from uiObjectInfoApi Adpator">
+        <div class="slds-box slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+            <lightning-layout>
+                <lightning-layout-item flexibility="auto" padding="around-small">
+                    <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">
+                        <p class="slds-p-left_small" style="color: Red;"><b>Demo of getObjectInfo</b></p>
+                        <template lwc:if={output}>
+                            <div class="slds-p-left_small">
+                                <p style="color: Blue;"><b>Object Name: {output.label}</b></p>
+                                <p style="color: Blue;"><b>Object Api Name: {output.apiName}</b></p>
+                            </div>
+                            <div class="slds-var-p-around_small">
+                                <template for:each={output.childRelationships} for:item="rel">
+                                    <p style="color: Green;" key={rel.childObjectApiName}>{rel.childObjectApiName}</p>
+                                </template>
+                            </div>
+                        </template>
+                        <template lwc:elseif={error}>
+                            <p>Error in getObjectInfoApi Adpator</p>
+                        </template>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" padding="around-small">
+                    <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">
+                        <p class="slds-p-left_small" style="color: Red;"><b>Demo of getObjectInfos</b></p>
+                        <template lwc:if={objectsInfos}>
+                            <div class="slds-p-left_small">
+                                <template for:each={objectsInfos.results} for:item="obj">
+                                    <p style="color: Green;" key={obj.result.apiName}>{obj.result.apiName}</p>
+                                </template>
+                            </div>
+                        </template>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" padding="around-small">
+                    <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">
+                        <p class="slds-p-left_small slds-p-top_small" style="color: Red;">
+                            <b>Demo of getPicklistValues</b>
+                        </p>
+                        <template lwc:if={industryPicklist.data}>
+                            <lightning-combobox name="progress" label="Industry" value={value}
+                                placeholder="Select Industry" options={industryPicklist.data.values}
+                                onchange={handleChange} class="slds-p-left_small">
+                            </lightning-combobox>
+
+                            <p class="slds-p-left_small">Selected value is: {value}</p>
+                        </template>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" padding="around-small">
+                    <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">
+                        <p class="slds-p-left_small slds-p-top_small" style="color: Red;">
+                            <b>Demo of getPicklistValuesByRecordType</b>
+                        </p>
+                        <template lwc:if={accountInfoPicklist.data}>
+                            <lightning-combobox name="Rating" label="Rating" value={value1} placeholder="Select Rating"
+                                options={accountInfoPicklist.data.picklistFieldValues.Rating.values}
+                                onchange={handleChange1} class="slds-p-left_small">
+                            </lightning-combobox>
+
+                            <p class="slds-p-left_small">Selected value is: {value1}</p>
+
+                            <lightning-combobox name="Priority" label="Customer Priority" placeholder="Select Priority"
+                                options={accountInfoPicklist.data.picklistFieldValues.CustomerPriority__c.values}
+                                class="slds-p-left_small">
+                            </lightning-combobox>
+                        </template>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>
